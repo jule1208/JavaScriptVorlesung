@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="simple.css" />
+    <link rel="stylesheet" href="hljs-default.css" />
+    <title>Canvas API</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header><h2>Kurzanleitung für Canvas API</h2></header>
+<main>
+    <h3>Wozu braucht es diese WEB-API?</h3>
+    <p>
+        Die Canvas-API bietet ein Mittel zum <mark>Zeichnen von Grafiken</mark> über
+        JavaScript <br>und das HTML <kbd>canvas</kbd> Element.
+        <br>Es kann unter anderem für Animationen, Spielgrafiken, Datenvisualisierung,
+        Fotomanipulation und Echtzeit-Videoverarbeitung verwendet werden.
+        <br>Die Canvas-API konzentriert sich weitgehend auf 2D-Grafiken.
+        <br>Die WebGL-API, die auch das <kbd>canvas</kbd> Element verwendet,
+        zeichnet hardwarebeschleunigte 2D- und 3D-Grafiken.
+        <br>
+        <br>Sie greifen auf ein <kbd>canvas</kbd> Element mit der HTML-DOM-Methode <mark>getElementById()</mark> zu.
+        Um im Canvas zu zeichnen, müssen außerdem ein 2D-Kontextobjekt erstellt werden.
+    </p>
+    <h3>Notiz:</h3>
+    <p>Das <kbd>canvas</kbd> Element selbst verfügt über keine Zeichenfunktionen.
+        <br>Deshalb muss JavaScript verwendet werden, um Grafiken zu zeichnen.
+        <br>Die <mark>getContext()Methode</mark> gibt ein Objekt mit Werkzeugen (Methoden) zum Zeichnen zurück.</p>
+    <br>
+    <h3>Ein grundlegendes Beispiel:</h3>
+    <p>Dieses einfache Beispiel zeichnet ein hellblaues Rechteck auf eine Leinwand.</p>
+    <button id="beispiel1">Ein Beispielskript ausführen</button>
+    <pre><code class="language-js">
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "lightblue";
+    ctx.fillRect(10, 10, 150, 100);
+    </code></pre>
+    <h3>Das Ergebnis:</h3>
+    <div class="section-content">
+        <div class="code-example" id="sect1">
+        <div class="example-header play-sample" id="sect2"></div>
+            <iframe class="sample-code-frame" title="Basic example sample"
+            id="frame_basic_example" width="700" height="180"
+            src="https://live.mdnplay.dev/en-US/docs/Web/API/Canvas_API/runner.html?id=basic_example"
+            loading="lazy">
+            </iframe>
+        </div>
+    </div>
+    <h3>Quellen:</h3>
+    <ul>
+        <li>
+            MDN: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Webseite</a>
+        </li>
+        <li>
+            W3schools: <a href="https://www.w3schools.com/jsref/api_canvas.asp">Webseite</a>
+        </li>
+    </ul>
+</main>
+<footer>von Hanna Bühler, Vlada Svinova und Jule Ziegler</footer>
+<script src="highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+</script>
+</body>
+</html>
