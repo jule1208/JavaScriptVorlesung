@@ -43,11 +43,6 @@
     --preformatted: #ccc;
     --disabled: #111;
   }
-
-  img,
-  video {
-    opacity: 0.6;
-  }
 }
 
 html {
