@@ -29,7 +29,7 @@
     <p>Das <kbd>canvas</kbd> Element selbst verfügt über keine Zeichenfunktionen
         <br>und dient nur als Container für Grafiken.
         <br>Deshalb muss JavaScript verwendet werden, um Grafiken zu zeichnen.
-        <br>Die <mark>getContext()Methode</mark> gibt ein Objekt mit Werkzeugen (Methoden) 
+        <br>Die <mark>getContext()Methode</mark> gibt ein Objekt mit Werkzeugen (Methoden)
         <br>zum Zeichnen zurück.</p>
     <h4>Syntax:</h4>
     <p><kbd>context.fillStyle = "Farbe";</kbd></p>
@@ -37,7 +37,7 @@
     <br>
     <h3>Ein grundlegendes Beispiel:</h3>
     <p>Dieses einfache Beispiel zeichnet ein hellblaues Rechteck auf eine Leinwand.</p>
-    <button id="beispiel1">Ein Beispielskript ausführen</button>
+    <button id="beispiel1">Ausführen</button>
     <pre><code class="language-js">
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -46,22 +46,40 @@
     ctx.fillRect(10, 10, 150, 100);
     </code></pre>
     <h3>Das Ergebnis:</h3>
-    <div class="section-content">
-        <div class="code-example" id="sect1">
-        <div class="example-header play-sample" id="sect2"></div>
-            <iframe class="sample-code-frame" title="Basic example sample"
-            id="frame_basic_example" width="700" height="180"
+    <iframe class="code-frame" id="basic_example" width="700" height="200"
             src="https://live.mdnplay.dev/en-US/docs/Web/API/Canvas_API/runner.html?id=basic_example"
             loading="lazy">
-            </iframe>
-        </div>
-    </div>
+    </iframe>
+    <br>
+    <br>
+    <h3>Ein weiteres Beispiel:</h3>
+    <button id="beispiel2">Ausführen</button>
+    <pre><code class="language-js">
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(20, 20, 75, 50);
+        ctx.globalAlpha = 0.2;
+
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 75, 50);
+
+        ctx.fillStyle = "darkblue";
+        ctx.fillRect(80, 80, 75, 50);
+    </code></pre>
+    <h3>Das Ergebnis:</h3>
+    <iframe class="code-frame" id="basic_example2" width="700" height="200"
+            src="https://live.mdnplay.dev/en-US/docs/Web/API/Canvas_API/runner.html?id=basic_example"
+            loading="lazy">
+    </iframe>
+    <br>
     <br>
     <h3>Browser-Unterstützung:</h3>
     <p>Das <kbd>canvas</kbd> Element ist ein HTML5-Standard (2014).
         <br>Canvas API wird in allen modernen Browsern unterstützt:</p>
-    <img src="Browserkompabilität.png" alt ="Browser">
     <br>
+    <img src="Browserkompabilität.png" alt ="Browser">
     <h3>Quellen:</h3>
     <ul>
         <li>
@@ -79,3 +97,4 @@
 </script>
 </body>
 </html>
+
