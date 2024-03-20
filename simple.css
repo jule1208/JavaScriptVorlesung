@@ -250,7 +250,7 @@ input[type="radio"]:enabled:hover {
   cursor: pointer;
 }
 
-iframe.sample-code-frame {
+iframe.code-frame {
     background: #fff;
     border: 1px solid var(--border-primary);
     border-radius: var(--elem-radius);
