@@ -1,41 +1,53 @@
-const beispiel1 = document.querySelector("#beispiel1");
-beispiel1.addEventListener("click", executeExample);
+function drawFilledRectangle() {
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "lightblue";
+ctx.fillRect(70, 50, 200, 100);
+}
 
-function executeExample() {
-
-    const canvas = document.createElement("canvas");
+function drawStrokeRectangle() {
+    const canvas = document.getElementById("canvas2");
     const ctx = canvas.getContext("2d");
-    canvas.width = 80;
-    canvas.height = 40;
-    ctx.fillStyle = "lightblue";
-    ctx.fillRect(20, 20, 80, 40);
 
-    document.body.appendChild(canvas);
+    ctx.strokeStyle = "lightblue";
+    ctx.lineWidth = 3; 
+    ctx.strokeRect(70, 50, 200, 100); 
 }
-
-const beispiel2 = document.querySelector("#beispiel2");
-beispiel2.addEventListener("click", executeExample2);
-
-function executeExample2() {
-
-    let c = document.getElementById("myCanvas");
-    let ctx = c.getContext("2d");
-
+function drawClearRectangle() {
+    const canvas = document.getElementById("canvas3");
+    const ctx = canvas.getContext("2d");
+   
     ctx.fillStyle = "lightblue";
-    ctx.fillRect(20, 20, 75, 50);
-    ctx.globalAlpha = 0.2;
+    ctx.fillRect(70, 50, 200, 100);
 
-    ctx.fillStyle = "blue";
-    ctx.fillRect(50, 50, 75, 50);
-
-    ctx.fillStyle = "darkblue";
-    ctx.fillRect(80, 80, 75, 50);
-
-    document.body.appendChild(myCanvas);
+    setTimeout(() => {
+        // Löscht das Rechteck von (70, 70) bis (90, 140)
+        ctx.clearRect(70, 70, 20, 70);
+    
+        // Wartet weitere 2 Sekunden, bevor weitere Pixel gelöscht werden
+        setTimeout(() => {
+            // Löscht das Rechteck von (40, 40) bis (120, 90)
+            ctx.clearRect(40, 40, 80, 50);
+            setTimeout(() => {
+                // Löscht das Rechteck von (190, 100) bis (220, 130)
+                ctx.clearRect(270, 150, 20, 20);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+    
 }
+function drawDreieck() {
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
 
 
-
-
-
-
+// Dreieck zeichnen
+ctx.beginPath();
+ctx.moveTo(70, 70); // Startpunkt
+ctx.lineTo(150, 50); // Linie nach (150, 50)
+ctx.lineTo(100, 150); // Linie nach (100, 150)
+ctx.closePath(); // Schließt den Pfad, um das Dreieck zu vervollständigen
+ctx.strokeStyle = "lightblue "; // Linienfarbe
+ctx.stroke(); // Zeichnet die Linien
+ctx.lineWidth = 7;
+}
